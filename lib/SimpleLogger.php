@@ -36,11 +36,13 @@ class SimpleLogger extends AbstractLogger
      */
     final protected function formatter($level, $message, array $context)
     {
+        $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
+
         $timestamp = date('c');
-        $class = end(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS))['class'];
-        $file = end(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS))['file'];
-        $function = end(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS))['function'];
-        $line = end(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS))['line'];
+        $class = isset($backtrace[3]['class']) ? $backtrace[3]['class'] : "";
+        $file = isset($backtrace[2]['file']) ? $backtrace[2]['file'] : "";
+        $function = isset($backtrace[3]['function']) ? $backtrace[3]['function'] : "";
+        $line = isset($backtrace[2]['line']) ? $backtrace[2]['line'] : "";
         $pid = getmypid();
 
         $identifier = ['%t', '%c', '%f', '%F', '%l', '%L', '%p', '%m'];
@@ -64,6 +66,10 @@ class SimpleLogger extends AbstractLogger
             $logfile = $this->configuration->getLogfile();
             if ($logfile !== null)
             {
+                if (is_writable($logfile) === false)
+                {
+                    throw new \RuntimeException("Log file {$logfile} is not writable.");
+                }
                 $handle = fopen($logfile, "a+");
                 fwrite($handle, $logline . PHP_EOL);
                 fclose($handle);
