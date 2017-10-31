@@ -1,0 +1,21 @@
+{
+    "name": "degagne/simplelogger",
+    "type": "library",
+    "description": "PHP Logger library",
+    "keywords": ["php"],
+    "homepage": "https://github.com/degagne/simplelogger",
+    "license": "",
+    "authors": [
+        {
+            "name": "Deric Degagne",
+            "email": "deric.degagne@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "psr/log" : "~1.0.2"
+    },
+    "autoload": {
+        "psr-4": { "SimpleLogger\\": "lib/" }
+    }
+}
