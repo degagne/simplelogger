@@ -34,7 +34,7 @@ class SimpleLogger extends AbstractLogger
      * @param  array  $context  log line context
      * @return void
      */
-    final protected function formatter($level, $message, array $context)
+    final protected function formatter($level, $message, array $context, $format)
     {
         $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
 
@@ -47,7 +47,7 @@ class SimpleLogger extends AbstractLogger
 
         $identifier = ['%t', '%c', '%f', '%F', '%l', '%L', '%p', '%m'];
         $values = [$timestamp, $class, $function, $file, strtoupper($level), $line, $pid, $message];
-        $format = str_replace($identifier, $values, $this->configuration->getFormat());
+        $format = str_replace($identifier, $values, $format);
 
         return $format;
     }
@@ -59,7 +59,8 @@ class SimpleLogger extends AbstractLogger
     {
         if ($this->configuration->getLevel($level) >= $this->configuration->getVerbosity())
         {
-            $logline = $this->formatter($level, $message, $context);
+            $console_format = $this->configuration->getLoggerConsoleFormat();
+            $logline = $this->formatter($level, $message, $context, $console_format);
             list($foreground, $background) = $this->configuration->getColours($level);
             fwrite(STDOUT, Colours::setColour($logline, $foreground, $background) . PHP_EOL);
 
@@ -70,6 +71,9 @@ class SimpleLogger extends AbstractLogger
                 {
                     throw new \RuntimeException("Log file {$logfile} is not writable.");
                 }
+
+                $file_format = $this->configuration->getLoggerFileFormat();
+                $logline = $this->formatter($level, $message, $context, $file_format);
                 $handle = fopen($logfile, "a+");
                 fwrite($handle, $logline . PHP_EOL);
                 fclose($handle);

@@ -26,7 +26,8 @@ class Logger extends SimpleLogger
         $configuration
             ->setLogFile($logfile)
             ->setVerbosity(LogLevel::INFO)
-            ->setFormat("%t %l %c:%f %p - %m");
+            ->setLoggerConsoleFormat("%t %l %c:%f %m")
+            ->setLoggerFileFormat("%t %l %c:%f %p %m");
         return parent::__construct($configuration);
     }
 }

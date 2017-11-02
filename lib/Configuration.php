@@ -21,11 +21,18 @@ class Configuration extends LogLevelMap
     public $verbosity = null;
 
     /**
-     * Log line format..
+     * Console log line format.
      *
      * @var string
      */
-    public $format = null;
+    public $console_format = null;
+
+    /**
+     * File log line format.
+     *
+     * @var string
+     */
+    public $file_format = null;
 
     /**
      * Sets log file name.
@@ -52,14 +59,26 @@ class Configuration extends LogLevelMap
     }
 
     /**
-     * Sets log line format.
+     * Sets console log line format.
      *
      * @param  int     $format log line format
      * @return object
      */
-    final public function setFormat($format)
+    final public function setLoggerConsoleFormat($format)
     {
-        $this->format = $format;
+        $this->console_format = $format;
+        return $this;
+    }
+
+    /**
+     * Sets file log line format.
+     *
+     * @param  int     $format log line format
+     * @return object
+     */
+    final public function setLoggerFileFormat($format)
+    {
+        $this->file_format = $format;
         return $this;
     }
 
@@ -92,13 +111,27 @@ class Configuration extends LogLevelMap
      *
      * @return string
      */
-    final public function getFormat()
+    final public function getLoggerConsoleFormat()
     {
-        if ($this->format === null)
+        if ($this->console_format === null)
         {
-            $this->format = "%t [%l] {%c:%f:%L} %p - %m";
+            $this->console_format = "%t %l %c:%f - %m";
         }
-        return $this->format;
+        return $this->console_format;
+    }
+
+    /**
+     * Gets log line format.
+     *
+     * @return string
+     */
+    final public function getLoggerFileFormat()
+    {
+        if ($this->file_format === null)
+        {
+            $this->file_format = "%t [%l] {%c:%f:%L} %p - %m";
+        }
+        return $this->file_format;
     }
 
     /**
