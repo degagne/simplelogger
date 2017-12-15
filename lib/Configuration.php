@@ -19,6 +19,13 @@ class Configuration extends LogLevelMap
      * @var int
      */
     public $verbosity = null;
+    
+    /**
+     * Default log level (console).
+     *
+     * @var int
+     */
+    public $console_verbosity = null;
 
     /**
      * Console log line format.
@@ -55,6 +62,18 @@ class Configuration extends LogLevelMap
     final public function setVerbosity($verbosity)
     {
         $this->verbosity = $this->getLevel($verbosity);
+        return $this;
+    }
+
+    /**
+     * Sets log level verbosity.
+     *
+     * @param  int     $verbosity log verbosity
+     * @return object
+     */
+    final public function setConsoleVerbosity($verbosity)
+    {
+        $this->console_verbosity = $this->getLevel($verbosity);
         return $this;
     }
 
@@ -104,6 +123,20 @@ class Configuration extends LogLevelMap
             $this->verbosity = $this->getLevel(LogLevel::DEBUG);
         }
         return $this->verbosity;
+    }
+    
+    /**
+     * Gets log level verbosity.
+     *
+     * @return string
+     */
+    final public function getConsoleVerbosity()
+    {
+        if ($this->console_verbosity === null)
+        {
+            $this->console_verbosity = $this->getLevel(LogLevel::DEBUG);
+        }
+        return $this->console_verbosity;
     }
 
     /**
