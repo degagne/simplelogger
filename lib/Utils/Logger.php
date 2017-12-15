@@ -25,7 +25,8 @@ class Logger extends SimpleLogger
         $configuration = new Configuration();
         $configuration
             ->setLogFile($logfile)
-            ->setVerbosity(LogLevel::INFO)
+            ->setVerbosity(LogLevel::NOTICE)
+            ->setConsoleVerbosity(LogLevel::INFO)
             ->setLoggerConsoleFormat("%t %l %c:%f %m")
             ->setLoggerFileFormat("%t %l %c:%f %p %m");
         return parent::__construct($configuration);

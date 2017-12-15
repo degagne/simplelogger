@@ -12,8 +12,8 @@ abstract class LogLevelMap
      */
     public static $LEVEL_MAP = [
         LogLevel::DEBUG     => 0,
-        LogLevel::INFO      => 1,
-        LogLevel::NOTICE    => 2,
+        LogLevel::NOTICE    => 1,
+        LogLevel::INFO      => 2,
         LogLevel::WARNING   => 3,
         LogLevel::ERROR     => 4,
         LogLevel::CRITICAL  => 5,
@@ -28,8 +28,8 @@ abstract class LogLevelMap
      */
     public static $LEVEL_COLOUR_MAP = [
         LogLevel::DEBUG     => ['light_blue', null],
-        LogLevel::INFO      => ['green', null],
         LogLevel::NOTICE    => ['light_blue', null],
+        LogLevel::INFO      => ['green', null],
         LogLevel::WARNING   => ['yellow', null],
         LogLevel::ERROR     => ['red', null],
         LogLevel::CRITICAL  => ['light_gray', 'red'],

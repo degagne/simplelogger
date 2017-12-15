@@ -59,10 +59,13 @@ class SimpleLogger extends AbstractLogger
     {
         if ($this->configuration->getLevel($level) >= $this->configuration->getVerbosity())
         {
-            $console_format = $this->configuration->getLoggerConsoleFormat();
-            $logline = $this->formatter($level, $message, $context, $console_format);
-            list($foreground, $background) = $this->configuration->getColours($level);
-            fwrite(STDOUT, Colours::setColour($logline, $foreground, $background) . PHP_EOL);
+            if ($this->configuration->getLevel($level) >= $this->configuration->getConsoleVerbosity())
+            {
+                $console_format = $this->configuration->getLoggerConsoleFormat();
+                $logline = $this->formatter($level, $message, $context, $console_format);
+                list($foreground, $background) = $this->configuration->getColours($level);
+                fwrite(STDOUT, Colours::setColour($logline, $foreground, $background) . PHP_EOL);
+            }
 
             $logfile = $this->configuration->getLogfile();
             if ($logfile !== null)
