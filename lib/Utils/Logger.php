@@ -7,12 +7,6 @@ use Psr\Log\LogLevel;
 
 class Logger extends SimpleLogger
 {
-    /**
-     * SimpleLogger class object.
-     *
-     * @var object
-     */
-    private $logger;
 
     /**
      * Constructor.

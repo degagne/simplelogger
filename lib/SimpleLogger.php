@@ -31,10 +31,10 @@ class SimpleLogger extends AbstractLogger
      *
      * @param  string $level    log level
      * @param  string $message  log message
-     * @param  array  $context  log line context
+     * @param  array  $format   log line format
      * @return void
      */
-    final protected function formatter($level, $message, array $context, $format)
+    final protected function formatter($level, $message, $format)
     {
         $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
 
@@ -62,7 +62,7 @@ class SimpleLogger extends AbstractLogger
             if ($this->configuration->getLevel($level) >= $this->configuration->getConsoleVerbosity())
             {
                 $console_format = $this->configuration->getLoggerConsoleFormat();
-                $logline = $this->formatter($level, $message, $context, $console_format);
+                $logline = $this->formatter($level, $message, $console_format);
                 list($foreground, $background) = $this->configuration->getColours($level);
                 fwrite(STDOUT, Colours::setColour($logline, $foreground, $background) . PHP_EOL);
             }
