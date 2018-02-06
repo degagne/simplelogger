@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>SimpleLogger\Configuration | PHP SimpleLogger API</title>
+
+            <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/sami.css">
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/typeahead.min.js"></script>
+        <script src="../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:SimpleLogger_Configuration" data-root-path="../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">PHP SimpleLogger API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../classes.html">Classes</a></li>
+                                            <li><a href="../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../interfaces.html">Interfaces</a></li>
+                    <li><a href="../traits.html">Traits</a></li>
+                    <li><a href="../doc-index.html">Index</a></li>
+                    <li><a href="../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../SimpleLogger.html">SimpleLogger</a></li><li class="backslash">\</li><li>Configuration</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Configuration
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Configuration</strong>        extends <a href="../SimpleLogger/LogLevelMap.html"><abbr title="SimpleLogger\LogLevelMap">LogLevelMap</abbr></a>        (<a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php">View source</a>)
+</p>
+
+        
+    
+
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_LEVEL_MAP">
+                    static                                                            array
+                </td>
+                <td>$LEVEL_MAP</td>
+                <td class="last">Log level mapping.</td>
+                <td><small>from&nbsp;<a href="../SimpleLogger/LogLevelMap.html#property_LEVEL_MAP"><abbr title="SimpleLogger\LogLevelMap">LogLevelMap</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_LEVEL_COLOUR_MAP">
+                    static                                                            array
+                </td>
+                <td>$LEVEL_COLOUR_MAP</td>
+                <td class="last">Log level colour mapping.</td>
+                <td><small>from&nbsp;<a href="../SimpleLogger/LogLevelMap.html#property_LEVEL_COLOUR_MAP"><abbr title="SimpleLogger\LogLevelMap">LogLevelMap</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_logfile">
+                                                                                string
+                </td>
+                <td>$logfile</td>
+                <td class="last">Log file name.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_verbosity">
+                                                                                int
+                </td>
+                <td>$verbosity</td>
+                <td class="last">Default log level.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_console_verbosity">
+                                                                                int
+                </td>
+                <td>$console_verbosity</td>
+                <td class="last">Default log level (console).</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_console_format">
+                                                                                string
+                </td>
+                <td>$console_format</td>
+                <td class="last">Console log line format.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_file_format">
+                                                                                string
+                </td>
+                <td>$file_format</td>
+                <td class="last">File log line format.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLevel">getLevel</a>(string $log_level)
+        
+                                            <p>Gets numerical log level value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getColours">getColours</a>(string $log_level)
+        
+                                            <p>Gets colour.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    object
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLogfile">setLogfile</a>(string $logfile)
+        
+                                            <p>Sets log file name.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    object
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setVerbosity">setVerbosity</a>(int $verbosity)
+        
+                                            <p>Sets log level verbosity.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    object
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setConsoleVerbosity">setConsoleVerbosity</a>(int $verbosity)
+        
+                                            <p>Sets log level verbosity.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    object
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLoggerConsoleFormat">setLoggerConsoleFormat</a>(int $format)
+        
+                                            <p>Sets console log line format.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    object
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLoggerFileFormat">setLoggerFileFormat</a>(int $format)
+        
+                                            <p>Sets file log line format.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLogfile">getLogfile</a>()
+        
+                                            <p>Gets log file name.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getVerbosity">getVerbosity</a>()
+        
+                                            <p>Gets log level verbosity.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getConsoleVerbosity">getConsoleVerbosity</a>()
+        
+                                            <p>Gets log level verbosity.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLoggerConsoleFormat">getLoggerConsoleFormat</a>()
+        
+                                            <p>Gets log line format.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLoggerFileFormat">getLoggerFileFormat</a>()
+        
+                                            <p>Gets log line format.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getLevel">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L173">line 173</a></div>
+        <code>final                    int
+    <strong>getLevel</strong>(string $log_level)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets numerical log level value.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$log_level</td>
+                <td>Psr\Log\LogLevel</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getColours">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L181">line 181</a></div>
+        <code>final                    array
+    <strong>getColours</strong>(string $log_level)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets colour.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$log_level</td>
+                <td>Psr\Log\LogLevel</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLogfile">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L50">line 50</a></div>
+        <code>final                    object
+    <strong>setLogfile</strong>(string $logfile)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets log file name.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$logfile</td>
+                <td>log file name</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>object</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setVerbosity">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L62">line 62</a></div>
+        <code>final                    object
+    <strong>setVerbosity</strong>(int $verbosity)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets log level verbosity.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$verbosity</td>
+                <td>log verbosity</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>object</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setConsoleVerbosity">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L74">line 74</a></div>
+        <code>final                    object
+    <strong>setConsoleVerbosity</strong>(int $verbosity)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets log level verbosity.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$verbosity</td>
+                <td>log verbosity</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>object</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLoggerConsoleFormat">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L86">line 86</a></div>
+        <code>final                    object
+    <strong>setLoggerConsoleFormat</strong>(int $format)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets console log line format.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$format</td>
+                <td>log line format</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>object</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLoggerFileFormat">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L98">line 98</a></div>
+        <code>final                    object
+    <strong>setLoggerFileFormat</strong>(int $format)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Sets file log line format.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$format</td>
+                <td>log line format</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>object</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLogfile">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L109">line 109</a></div>
+        <code>final                    string
+    <strong>getLogfile</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets log file name.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getVerbosity">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L119">line 119</a></div>
+        <code>final                    string
+    <strong>getVerbosity</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets log level verbosity.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getConsoleVerbosity">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L133">line 133</a></div>
+        <code>final                    string
+    <strong>getConsoleVerbosity</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets log level verbosity.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLoggerConsoleFormat">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L147">line 147</a></div>
+        <code>final                    string
+    <strong>getLoggerConsoleFormat</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets log line format.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLoggerFileFormat">
+        <div class="location">at         <a href="https://github.com/degagne/simplelogger/blob/master/lib/Configuration.php#L161">line 161</a></div>
+        <code>final                    string
+    <strong>getLoggerFileFormat</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Gets log line format.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

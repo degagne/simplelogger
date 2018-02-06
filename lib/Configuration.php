@@ -14,6 +14,13 @@ class Configuration extends LogLevelMap
     public $logfile = null;
 
     /**
+     * Default tag
+     *
+     * @var string
+     */
+    public $tag = null;
+
+    /**
      * Default log level.
      *
      * @var int
@@ -50,6 +57,18 @@ class Configuration extends LogLevelMap
     final public function setLogfile($logfile)
     {
         $this->logfile = $logfile;
+        return $this;
+    }
+
+    /**
+     * Sets log line tag.
+     *
+     * @param  string $tag tag
+     * @return object
+     */
+    final public function setTag($tag)
+    {
+        $this->tag = $tag;
         return $this;
     }
 
@@ -109,6 +128,20 @@ class Configuration extends LogLevelMap
     final public function getLogfile()
     {
         return $this->logfile;
+    }
+
+    /**
+     * Gets tag
+     *
+     * @return string
+     */
+    final public function getTag()
+    {
+        if ($this->tag === null)
+        {
+            $this->tag = 'NA';
+        }
+        return $this->tag;
     }
 
     /**
