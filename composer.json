@@ -4,7 +4,7 @@
     "description": "PHP Logger library",
     "keywords": ["php"],
     "homepage": "https://github.com/degagne/simplelogger",
-    "license": "",
+    "license": "MIT",
     "authors": [
         {
             "name": "Deric Degagne",
