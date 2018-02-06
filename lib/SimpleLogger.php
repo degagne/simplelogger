@@ -21,9 +21,7 @@ class SimpleLogger extends AbstractLogger
      */
     public function __construct(Configuration $configuration = null)
     {
-        $this->configuration = ($configuration instanceof Configuration)
-            ? $configuration
-            : new Configuration();
+        $this->configuration = ($configuration instanceof Configuration) ? $configuration : new Configuration();
     }
 
     /**
@@ -31,7 +29,6 @@ class SimpleLogger extends AbstractLogger
      *
      * @param  string $level    log level
      * @param  string $message  log message
-     * @param  array  $format   log line format
      * @return void
      */
     final protected function formatter($level, $message, $format)
@@ -44,9 +41,10 @@ class SimpleLogger extends AbstractLogger
         $function = isset($backtrace[3]['function']) ? $backtrace[3]['function'] : "";
         $line = isset($backtrace[2]['line']) ? $backtrace[2]['line'] : "";
         $pid = getmypid();
+        $tag = $this->configuration->getTag();
 
-        $identifier = ['%t', '%c', '%f', '%F', '%l', '%L', '%p', '%m'];
-        $values = [$timestamp, $class, $function, $file, strtoupper($level), $line, $pid, $message];
+        $identifier = ['%t', '%c', '%f', '%F', '%l', '%L', '%p', '%m', '%T'];
+        $values = [$timestamp, $class, $function, $file, strtoupper($level), $line, $pid, $message, $tag];
         $format = str_replace($identifier, $values, $format);
 
         return $format;
@@ -57,6 +55,7 @@ class SimpleLogger extends AbstractLogger
      */
     public function log($level, $message, array $context = [])
     {
+        $stdout = fopen('php://stdout', 'w');
         if ($this->configuration->getLevel($level) >= $this->configuration->getVerbosity())
         {
             if ($this->configuration->getLevel($level) >= $this->configuration->getConsoleVerbosity())
@@ -64,11 +63,10 @@ class SimpleLogger extends AbstractLogger
                 $console_format = $this->configuration->getLoggerConsoleFormat();
                 $logline = $this->formatter($level, $message, $console_format);
                 list($foreground, $background) = $this->configuration->getColours($level);
-                fwrite(STDOUT, Colours::setColour($logline, $foreground, $background) . PHP_EOL);
+                fwrite($stdout, Colours::setColour($logline, $foreground, $background) . PHP_EOL);
             }
 
-            $logfile = $this->configuration->getLogfile();
-            if ($logfile !== null)
+            if (($logfile = $this->configuration->getLogfile()) !== null)
             {
                 if (is_writable($logfile) === false)
                 {
@@ -76,7 +74,7 @@ class SimpleLogger extends AbstractLogger
                 }
 
                 $file_format = $this->configuration->getLoggerFileFormat();
-                $logline = $this->formatter($level, $message, $context, $file_format);
+                $logline = $this->formatter($level, $message, $file_format);
                 $handle = fopen($logfile, "a+");
                 fwrite($handle, $logline . PHP_EOL);
                 fclose($handle);
